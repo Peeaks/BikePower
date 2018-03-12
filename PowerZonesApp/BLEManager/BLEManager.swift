@@ -1,6 +1,6 @@
 import Foundation
 import CoreBluetooth
-import SwiftLog
+//import SwiftLog
 
 let sharedBLEManager = BLEManager()
 
@@ -42,22 +42,22 @@ extension BLEManager: BLEManagerProtocol {
             switch self.centralManager.state {
             case .unknown:
                 print("central.state is .unknown")
-                logw("central.state is .unknown")
+//                logw("central.state is .unknown")
             case .resetting:
                 print("central.state is .resetting")
-                logw("central.state is .resetting")
+//                logw("central.state is .resetting")
             case .unsupported:
                 print("central.state is .unsupported")
-                logw("central.state is .unsupported")
+//                logw("central.state is .unsupported")
             case .unauthorized:
                 print("central.state is .unauthorized")
-                logw("central.state is .unauthorized")
+//                logw("central.state is .unauthorized")
             case .poweredOff:
                 print("central.state is .poweredOff")
-                logw("central.state is .poweredOff")
+//                logw("central.state is .poweredOff")
             case .poweredOn:
                 print("central.state is .poweredOn")
-                logw("central.state is .poweredOn")
+//                logw("central.state is .poweredOn")
                 self.centralManager.scanForPeripherals(withServices: [heartRateServiceCBUUID, cyclingPowerServiceCBUUID])
             }
         }
@@ -91,21 +91,21 @@ extension BLEManager: CBCentralManagerDelegate {
         
         if data[0] as! CBUUID == heartRateServiceCBUUID {
             print("Heart rate device found")
-            logw("Heart Rate device found")
+//            logw("Heart Rate device found")
             heartRatePeripheralDiscovered?(peripheral)
         } else if data[0] as! CBUUID == cyclingPowerServiceCBUUID {
             print("Cycling power device found")
-            logw("Cycling power device found")
+//            logw("Cycling power device found")
             cyclingPowerPeripheralDiscovered?(peripheral)
         } else {
             print("Unsupported BLE device")
-            logw("Unsupported BLE device")
+//            logw("Unsupported BLE device")
         }
     }
     
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
         print("Connected to peripheral: \(peripheral.name ?? "No name found")")
-        logw("Connected to peripheral: \(peripheral.name ?? "No name found")")
+//        logw("Connected to peripheral: \(peripheral.name ?? "No name found")")
         peripheral.discoverServices([])
     }
 }
@@ -117,7 +117,7 @@ extension BLEManager: CBPeripheralDelegate {
         print("Printing all services found in \(peripheral.name)")
         for service in services {
             print(service)
-            logw(service.description)
+//            logw(service.description)
             peripheral.discoverCharacteristics(nil, for: service)
         }
     }
@@ -136,17 +136,17 @@ extension BLEManager: CBPeripheralDelegate {
         switch characteristic.uuid {
         case heartRateMeasurementCharacteristicCBUUID:
             print("heartRateMeasurementCharacteristic UUID found")
-            logw("heartRateMeasurementCharacteristic UUID found")
+//            logw("heartRateMeasurementCharacteristic UUID found")
             let bpm = heartRate(from: characteristic)
             heartRateChanged?(bpm)
         case cyclingPowerMeasurementCharacteristicCBUUID:
             print("cyclingPowerMeasurementCharacteristic UUID found")
-            logw("cyclingPowerMeasurementCharacteristic UUID found")
+//            logw("cyclingPowerMeasurementCharacteristic UUID found")
             let powerData = calculatePower(from: characteristic)
             powerChanged?(powerData)
         default:
             print("Unhandled Characteristic UUID: \(characteristic.uuid)")
-            logw("Unhandled Characteristic UUID: \(characteristic.uuid)")
+//            logw("Unhandled Characteristic UUID: \(characteristic.uuid)")
         }
     }
     

@@ -6,6 +6,6 @@ target 'PowerZonesApp' do
   use_frameworks!
 
   # Pods for PowerZonesApp
-	pod 'SwiftLog', '~> 1.0.0'
+  pod 'SwiftLog', '~> 1.0.0'
 
 end
