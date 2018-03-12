@@ -1,0 +1,12 @@
+PODS:
+  - SwiftLog (1.0.0)
+
+DEPENDENCIES:
+  - SwiftLog (~> 1.0.0)
+
+SPEC CHECKSUMS:
+  SwiftLog: f6c4f9a4ade06263555ab34b2c0f72025ffcda9e
+
+PODFILE CHECKSUM: 1c7a1e8919014d3e98b11c72fde6d3594009ff9d
+
+COCOAPODS: 1.4.0
