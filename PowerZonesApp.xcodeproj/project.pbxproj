@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		635EBDB92057ECF600DF9CB7 /* bigRedCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = 635EBDB22057EB2700DF9CB7 /* bigRedCircle.png */; };
+		635EBDBA2057F0E700DF9CB7 /* bigGreenCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = 635EBDB72057EB2800DF9CB7 /* bigGreenCircle.png */; };
+		635EBDBB2057F0EA00DF9CB7 /* bigBlueCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = 635EBDB42057EB2700DF9CB7 /* bigBlueCircle.png */; };
+		635EBDBC2057F0F000DF9CB7 /* heartIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 635EBDB82057EB2800DF9CB7 /* heartIcon.png */; };
+		635EBDBD2057F0F300DF9CB7 /* powerIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 635EBDB12057EB2700DF9CB7 /* powerIcon.png */; };
+		635EBDBE2057F0F700DF9CB7 /* checkmarkIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 635EBDB62057EB2700DF9CB7 /* checkmarkIcon.png */; };
+		635EBDBF2057F0FB00DF9CB7 /* bigYellowCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = 635EBDB52057EB2700DF9CB7 /* bigYellowCircle.png */; };
+		635EBDC02057F0FD00DF9CB7 /* bigWhiteCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = 635EBDB32057EB2700DF9CB7 /* bigWhiteCircle.png */; };
 		63C9773F204FDA8A0096456E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C9773E204FDA8A0096456E /* AppDelegate.swift */; };
 		63C97744204FDA8A0096456E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63C97742204FDA8A0096456E /* Main.storyboard */; };
 		63C97746204FDA8A0096456E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63C97745204FDA8A0096456E /* Assets.xcassets */; };
@@ -45,7 +53,6 @@
 		63D37BDA20559DC700D5EA41 /* AppStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D37BD920559DC700D5EA41 /* AppStorage.swift */; };
 		63D37BDC20559DF500D5EA41 /* AppContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D37BDB20559DF500D5EA41 /* AppContext.swift */; };
 		63D37BDE20559E4100D5EA41 /* UserDefaultProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D37BDD20559E4100D5EA41 /* UserDefaultProtocol.swift */; };
-		63D37BE32055AFC200D5EA41 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 63D37BE22055AFC200D5EA41 /* settings.png */; };
 		63D37BE720567FE200D5EA41 /* PowerMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D37BE620567FE200D5EA41 /* PowerMeasurement.swift */; };
 		63D37BE920568F3C00D5EA41 /* PowerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D37BE820568F3C00D5EA41 /* PowerData.swift */; };
 		63D37BEB205699F600D5EA41 /* HeartRateMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D37BEA205699F600D5EA41 /* HeartRateMeasurement.swift */; };
@@ -79,6 +86,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		635EBDB12057EB2700DF9CB7 /* powerIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = powerIcon.png; sourceTree = "<group>"; };
+		635EBDB22057EB2700DF9CB7 /* bigRedCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bigRedCircle.png; sourceTree = "<group>"; };
+		635EBDB32057EB2700DF9CB7 /* bigWhiteCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bigWhiteCircle.png; sourceTree = "<group>"; };
+		635EBDB42057EB2700DF9CB7 /* bigBlueCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bigBlueCircle.png; sourceTree = "<group>"; };
+		635EBDB52057EB2700DF9CB7 /* bigYellowCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bigYellowCircle.png; sourceTree = "<group>"; };
+		635EBDB62057EB2700DF9CB7 /* checkmarkIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkmarkIcon.png; sourceTree = "<group>"; };
+		635EBDB72057EB2800DF9CB7 /* bigGreenCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bigGreenCircle.png; sourceTree = "<group>"; };
+		635EBDB82057EB2800DF9CB7 /* heartIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heartIcon.png; sourceTree = "<group>"; };
 		63C9773B204FDA8A0096456E /* PowerZonesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PowerZonesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63C9773E204FDA8A0096456E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63C97743204FDA8A0096456E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -119,7 +134,6 @@
 		63D37BD920559DC700D5EA41 /* AppStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStorage.swift; sourceTree = "<group>"; };
 		63D37BDB20559DF500D5EA41 /* AppContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContext.swift; sourceTree = "<group>"; };
 		63D37BDD20559E4100D5EA41 /* UserDefaultProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultProtocol.swift; sourceTree = "<group>"; };
-		63D37BE22055AFC200D5EA41 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings.png; path = ../../../../Downloads/settings.png; sourceTree = "<group>"; };
 		63D37BE620567FE200D5EA41 /* PowerMeasurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerMeasurement.swift; sourceTree = "<group>"; };
 		63D37BE820568F3C00D5EA41 /* PowerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerData.swift; sourceTree = "<group>"; };
 		63D37BEA205699F600D5EA41 /* HeartRateMeasurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateMeasurement.swift; sourceTree = "<group>"; };
@@ -326,7 +340,14 @@
 		63D37BDF2055AF7100D5EA41 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				63D37BE22055AFC200D5EA41 /* settings.png */,
+				635EBDB42057EB2700DF9CB7 /* bigBlueCircle.png */,
+				635EBDB72057EB2800DF9CB7 /* bigGreenCircle.png */,
+				635EBDB22057EB2700DF9CB7 /* bigRedCircle.png */,
+				635EBDB32057EB2700DF9CB7 /* bigWhiteCircle.png */,
+				635EBDB52057EB2700DF9CB7 /* bigYellowCircle.png */,
+				635EBDB62057EB2700DF9CB7 /* checkmarkIcon.png */,
+				635EBDB82057EB2800DF9CB7 /* heartIcon.png */,
+				635EBDB12057EB2700DF9CB7 /* powerIcon.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -464,9 +485,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				635EBDBF2057F0FB00DF9CB7 /* bigYellowCircle.png in Resources */,
+				635EBDBB2057F0EA00DF9CB7 /* bigBlueCircle.png in Resources */,
 				63C97749204FDA8A0096456E /* LaunchScreen.storyboard in Resources */,
-				63D37BE32055AFC200D5EA41 /* settings.png in Resources */,
 				63C97746204FDA8A0096456E /* Assets.xcassets in Resources */,
+				635EBDBA2057F0E700DF9CB7 /* bigGreenCircle.png in Resources */,
+				635EBDBE2057F0F700DF9CB7 /* checkmarkIcon.png in Resources */,
+				635EBDBC2057F0F000DF9CB7 /* heartIcon.png in Resources */,
+				635EBDC02057F0FD00DF9CB7 /* bigWhiteCircle.png in Resources */,
+				635EBDB92057ECF600DF9CB7 /* bigRedCircle.png in Resources */,
+				635EBDBD2057F0F300DF9CB7 /* powerIcon.png in Resources */,
 				63C97744204FDA8A0096456E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

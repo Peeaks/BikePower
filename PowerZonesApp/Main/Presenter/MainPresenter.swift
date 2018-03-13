@@ -19,14 +19,32 @@ class MainPresenter {
     }
     
     func refreshViewModel() {
-        let powerPercentOfFtpString = power == -1 ? "--" : String("\(Int(Double(power) / Double(self.ftp) * 100)) %")
+        let powerPercentOfFtp = power == -1 ? -1 : Int(Double(power) / Double(self.ftp) * 100)
+        
+        let powerPercentOfFtpString = powerPercentOfFtp == -1 ? "--" : String("\(powerPercentOfFtp)")
         let heartRateString = heartRate == -1 ? "--" : String(heartRate)
         let powerString = power == -1 ? "--" : String(power)
         let cadenceString = cadence == -1 ? "--" : String(cadence)
         let speedString = speed == -1 ? "--" : String(speed)
         
-        let viewModel = MainViewModel(powerPercentOfFtp: powerPercentOfFtpString, heartRate: heartRateString, power: powerString, cadence: cadenceString, speed: speedString)
+        let powerZone = calculatePowerZone(powerPercentOfFtp: powerPercentOfFtp)
+        
+        let viewModel = MainViewModel(powerPercentOfFtp: powerPercentOfFtpString, powerZone: powerZone, heartRate: heartRateString, power: powerString, cadence: cadenceString, speed: speedString)
         viewController?.viewModel = viewModel
+    }
+    
+    func calculatePowerZone(powerPercentOfFtp: Int) -> Int {
+        if powerPercentOfFtp <= 55 {
+            return 1
+        } else if powerPercentOfFtp <= 76 {
+            return 2
+        } else if powerPercentOfFtp <= 82 {
+            return 3
+        } else if powerPercentOfFtp <= 90 {
+            return 4
+        } else {
+            return 5
+        }
     }
 }
 

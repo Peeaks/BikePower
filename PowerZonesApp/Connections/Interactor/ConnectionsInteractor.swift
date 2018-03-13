@@ -47,8 +47,10 @@ extension ConnectionsInteractor: ConnectionsInteractorProtocol {
         
         switch indexPath.section {
         case 0:
-            sharedBLEManager.connectToHeartRate(peripheral: heartRatePeripherals[indexPath.row])
+            print("Need logic for disconnecting device")
         case 1:
+            sharedBLEManager.connectToHeartRate(peripheral: heartRatePeripherals[indexPath.row])
+        case 2:
             sharedBLEManager.connectToCyclingPower(peripheral: cyclingPowerPeripherals[indexPath.row])
         default:
             break

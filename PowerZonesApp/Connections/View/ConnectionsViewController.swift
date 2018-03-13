@@ -64,8 +64,10 @@ extension ConnectionsViewController: UITableViewDataSource {
         
         switch section {
         case 0:
-            return viewModel.heartRateCellViewModels.count
+            return 0
         case 1:
+            return viewModel.heartRateCellViewModels.count
+        case 2:
             return viewModel.cyclingPowerCellViewModels.count
         default:
             return 0

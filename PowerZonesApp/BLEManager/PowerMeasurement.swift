@@ -129,7 +129,7 @@ struct PowerMeasurement {
         if wheelRevolutionDataPresent && previousSample.wheelRevolutionDataPresent {
             let wheelTimeDiff = timeIntervalForCurrentSample(current: lastWheelEventTime, previous: previousSample.lastWheelEventTime)
             let valueDiff = valueDiffForCurrentSample(current: cumulativeWheel, previous: previousSample.cumulativeWheel, max: UInt32.max)
-            
+
             distance = Double(valueDiff * wheelSize) / 1000.0 // Distance in meters
             if distance != nil && wheelTimeDiff > 0 {
                 speed = (wheelTimeDiff == 0) ? 0 : distance! / wheelTimeDiff // m/s

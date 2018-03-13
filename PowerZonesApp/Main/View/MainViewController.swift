@@ -26,6 +26,7 @@ class MainViewController: UIViewController {
     }
     
     // MARK: Interface Builder Outlets
+    @IBOutlet weak var powerZoneImage: UIImageView!
     @IBOutlet weak var powerPercentOfFtpLabel: UILabel!
     @IBOutlet weak var powerLabel: UILabel!
     @IBOutlet weak var heartRateLabel: UILabel!
@@ -52,6 +53,21 @@ extension MainViewController {
         heartRateLabel.text = viewModel.heartRate
         cadenceLabel.text = viewModel.cadence
         speedLabel.text = viewModel.speed
+        
+        switch viewModel.powerZone {
+        case 1:
+            powerZoneImage.image = UIImage(named: "bigWhiteCircle")
+        case 2:
+            powerZoneImage.image = UIImage(named: "bigBlueCircle")
+        case 3:
+            powerZoneImage.image = UIImage(named: "bigGreenCircle")
+        case 4:
+            powerZoneImage.image = UIImage(named: "bigYellowCircle")
+        case 5:
+            powerZoneImage.image = UIImage(named: "bigRedCircle")
+        default:
+            powerZoneImage.image = UIImage(named: "bigWhiteCircle")
+        }
     }
 }
 
