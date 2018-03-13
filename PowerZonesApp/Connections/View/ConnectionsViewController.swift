@@ -16,6 +16,12 @@ class ConnectionsViewController: UIViewController {
         eventHandler.didLoad()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+//        refresh()
+    }
+    
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
@@ -64,8 +70,10 @@ extension ConnectionsViewController: UITableViewDataSource {
         
         switch section {
         case 0:
-            return viewModel.heartRateCellViewModels.count
+            return viewModel.connectedCellViewModels.count
         case 1:
+            return viewModel.heartRateCellViewModels.count
+        case 2:
             return viewModel.cyclingPowerCellViewModels.count
         default:
             return 0
@@ -73,14 +81,16 @@ extension ConnectionsViewController: UITableViewDataSource {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0:
-            return "Heart Rate Monitors"
+            return "Connected Devices"
         case 1:
+            return "Heart Rate Monitors"
+        case 2:
             return "Cycling Power Meters"
         default:
             return "Unknown section"
@@ -103,8 +113,10 @@ extension ConnectionsViewController: UITableViewDataSource {
         
         switch (section) {
         case 0:
-            cell.setupCell(cellViewModel: viewModel.heartRateCellViewModels[row])
+            cell.setupCell(cellViewModel: viewModel.connectedCellViewModels[row])
         case 1:
+            cell.setupCell(cellViewModel: viewModel.heartRateCellViewModels[row])
+        case 2:
             cell.setupCell(cellViewModel: viewModel.cyclingPowerCellViewModels[row])
         default:
             break

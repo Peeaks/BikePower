@@ -89,6 +89,22 @@ extension BLEManager: BLEManagerProtocol {
             self.bikePeripheral = nil
         }
     }
+    
+    func disconnectFromHeartRateDevice() {
+        guard let peripheral = self.heartRatePeripheral else {
+            return
+        }
+        centralManager.cancelPeripheralConnection(peripheral)
+        self.heartRatePeripheral = nil
+    }
+    
+    func disconnectFromPowerDevice() {
+        guard let peripheral = self.bikePeripheral else {
+            return
+        }
+        centralManager.cancelPeripheralConnection(peripheral)
+        self.bikePeripheral = nil
+    }
 }
 
 extension BLEManager: CBCentralManagerDelegate {

@@ -3,6 +3,6 @@ import CoreBluetooth
 
 protocol ConnectionsPresenterProtocol: class {
     
-    func presentPeripherals(connectedPeripherals: [CBPeripheral], heartRatePeripherals: [CBPeripheral], cyclingPowerPeripherals: [CBPeripheral])
+    func presentPeripherals(connectedHeartRatePeripheral: CBPeripheral?, connectedPowerPeripheral: CBPeripheral?, heartRatePeripherals: [CBPeripheral], cyclingPowerPeripherals: [CBPeripheral])
     
 }
