@@ -6,6 +6,7 @@ class ConnectionsInteractor {
     weak var presenter: ConnectionsPresenterProtocol?
     lazy var entityGateway: ConnectionsEntityGatewayProtocol = ConnectionsEntityGateway(interactor: self)
     
+    private var connectedPeripherals = [CBPeripheral]()
     private var heartRatePeripherals = [CBPeripheral]()
     private var cyclingPowerPeripherals = [CBPeripheral]()
     
@@ -14,6 +15,9 @@ class ConnectionsInteractor {
         
         sharedBLEManager.heartRatePeripheralDiscovered = heartRatePeripheralDiscovered
         sharedBLEManager.cyclingPowerPeripheralDiscovered = cyclingPowerPeripheralDiscovered
+        
+        sharedBLEManager.connectedToPeripheral = connectedToPeripheral
+        sharedBLEManager.disconnectedFromPeripheral = disconnectedFromPeripheral
     }
     
     func heartRatePeripheralDiscovered(peripheral: CBPeripheral) {
@@ -25,6 +29,18 @@ class ConnectionsInteractor {
     func cyclingPowerPeripheralDiscovered(peripheral: CBPeripheral) {
         print("Found peripheral: \(peripheral.name ?? "No name found")")
         cyclingPowerPeripherals.append(peripheral)
+        presentPeripherals()
+    }
+    
+    func connectedToPeripheral(peripheral: CBPeripheral) {
+        connectedPeripherals.append(peripheral)
+        presentPeripherals()
+    }
+    
+    func disconnectedFromPeripheral(peripheral: CBPeripheral) {
+        if let index = connectedPeripherals.index(of: peripheral) {
+            connectedPeripherals.remove(at: index)
+        }
         presentPeripherals()
     }
 
@@ -44,13 +60,10 @@ extension ConnectionsInteractor: ConnectionsInteractorProtocol {
     }
     
     func didSelectRowAt(indexPath: IndexPath) {
-        
         switch indexPath.section {
         case 0:
-            print("Need logic for disconnecting device")
-        case 1:
             sharedBLEManager.connectToHeartRate(peripheral: heartRatePeripherals[indexPath.row])
-        case 2:
+        case 1:
             sharedBLEManager.connectToCyclingPower(peripheral: cyclingPowerPeripherals[indexPath.row])
         default:
             break
@@ -59,6 +72,6 @@ extension ConnectionsInteractor: ConnectionsInteractorProtocol {
     
     //Out
     func presentPeripherals() {
-        presenter?.presentPeripherals(heartRatePeripherals: heartRatePeripherals, cyclingPowerPeripherals: cyclingPowerPeripherals)
+        presenter?.presentPeripherals(connectedPeripherals: connectedPeripherals, heartRatePeripherals: heartRatePeripherals, cyclingPowerPeripherals: cyclingPowerPeripherals)
     }
 }

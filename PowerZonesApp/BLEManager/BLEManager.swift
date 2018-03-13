@@ -16,11 +16,14 @@ let cyclingPowerMeasurementCharacteristicCBUUID = CBUUID(string: "2A63")
 class BLEManager: NSObject {
     
     var centralManager: CBCentralManager!
-    var heartRatePeripheral: CBPeripheral!
-    var bikePeripheral: CBPeripheral!
+    var heartRatePeripheral: CBPeripheral?
+    var bikePeripheral: CBPeripheral?
     
     var heartRatePeripheralDiscovered: ((CBPeripheral) -> Void)?
     var cyclingPowerPeripheralDiscovered: ((CBPeripheral) -> Void)?
+    
+    var connectedToPeripheral: ((CBPeripheral) -> Void)?
+    var disconnectedFromPeripheral: ((CBPeripheral) -> Void)?
     
     var heartRateChanged: ((Int) -> Void)?
     var powerChanged: ((PowerData) -> Void)?
@@ -42,22 +45,16 @@ extension BLEManager: BLEManagerProtocol {
             switch self.centralManager.state {
             case .unknown:
                 print("central.state is .unknown")
-//                logw("central.state is .unknown")
             case .resetting:
                 print("central.state is .resetting")
-//                logw("central.state is .resetting")
             case .unsupported:
                 print("central.state is .unsupported")
-//                logw("central.state is .unsupported")
             case .unauthorized:
                 print("central.state is .unauthorized")
-//                logw("central.state is .unauthorized")
             case .poweredOff:
                 print("central.state is .poweredOff")
-//                logw("central.state is .poweredOff")
             case .poweredOn:
                 print("central.state is .poweredOn")
-//                logw("central.state is .poweredOn")
                 self.centralManager.scanForPeripherals(withServices: [heartRateServiceCBUUID, cyclingPowerServiceCBUUID])
             }
         }
@@ -68,15 +65,29 @@ extension BLEManager: BLEManagerProtocol {
     }
     
     func connectToHeartRate(peripheral: CBPeripheral) {
-        heartRatePeripheral = peripheral
-        heartRatePeripheral.delegate = self
-        centralManager.connect(heartRatePeripheral)
+        guard let heartRatePeripheral = self.heartRatePeripheral else {
+            self.heartRatePeripheral = peripheral
+            self.heartRatePeripheral!.delegate = self
+            centralManager.connect(self.heartRatePeripheral!)
+            return
+        }
+        if peripheral == heartRatePeripheral {
+            centralManager.cancelPeripheralConnection(heartRatePeripheral)
+            self.heartRatePeripheral = nil
+        }
     }
     
     func connectToCyclingPower(peripheral: CBPeripheral) {
-        bikePeripheral = peripheral
-        bikePeripheral.delegate = self
-        centralManager.connect(bikePeripheral)
+        guard let bikePeripheral = self.bikePeripheral else {
+            self.bikePeripheral = peripheral
+            self.bikePeripheral!.delegate = self
+            centralManager.connect(self.bikePeripheral!)
+            return
+        }
+        if peripheral == bikePeripheral {
+            centralManager.cancelPeripheralConnection(bikePeripheral)
+            self.bikePeripheral = nil
+        }
     }
 }
 
@@ -91,22 +102,24 @@ extension BLEManager: CBCentralManagerDelegate {
         
         if data[0] as! CBUUID == heartRateServiceCBUUID {
             print("Heart rate device found")
-//            logw("Heart Rate device found")
             heartRatePeripheralDiscovered?(peripheral)
         } else if data[0] as! CBUUID == cyclingPowerServiceCBUUID {
             print("Cycling power device found")
-//            logw("Cycling power device found")
             cyclingPowerPeripheralDiscovered?(peripheral)
         } else {
             print("Unsupported BLE device")
-//            logw("Unsupported BLE device")
         }
     }
     
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
         print("Connected to peripheral: \(peripheral.name ?? "No name found")")
-//        logw("Connected to peripheral: \(peripheral.name ?? "No name found")")
+        connectedToPeripheral?(peripheral)
         peripheral.discoverServices([])
+    }
+    
+    func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
+        print("Disconnected from peripheral: \(peripheral.name ?? "No name found")")
+        disconnectedFromPeripheral?(peripheral)
     }
 }
 
@@ -114,10 +127,9 @@ extension BLEManager: CBPeripheralDelegate {
     func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
         guard let services = peripheral.services else { return }
         
-        print("Printing all services found in \(peripheral.name)")
+        print(String("Printing all services found in \(peripheral.name ?? "No name found")"))
         for service in services {
             print(service)
-//            logw(service.description)
             peripheral.discoverCharacteristics(nil, for: service)
         }
     }
@@ -136,17 +148,14 @@ extension BLEManager: CBPeripheralDelegate {
         switch characteristic.uuid {
         case heartRateMeasurementCharacteristicCBUUID:
             print("heartRateMeasurementCharacteristic UUID found")
-//            logw("heartRateMeasurementCharacteristic UUID found")
             let bpm = heartRate(from: characteristic)
             heartRateChanged?(bpm)
         case cyclingPowerMeasurementCharacteristicCBUUID:
             print("cyclingPowerMeasurementCharacteristic UUID found")
-//            logw("cyclingPowerMeasurementCharacteristic UUID found")
             let powerData = calculatePower(from: characteristic)
             powerChanged?(powerData)
         default:
             print("Unhandled Characteristic UUID: \(characteristic.uuid)")
-//            logw("Unhandled Characteristic UUID: \(characteristic.uuid)")
         }
     }
     

@@ -64,10 +64,8 @@ extension ConnectionsViewController: UITableViewDataSource {
         
         switch section {
         case 0:
-            return 0
-        case 1:
             return viewModel.heartRateCellViewModels.count
-        case 2:
+        case 1:
             return viewModel.cyclingPowerCellViewModels.count
         default:
             return 0
@@ -75,16 +73,14 @@ extension ConnectionsViewController: UITableViewDataSource {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 2
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0:
-            return "Connected Devices"
-        case 1:
             return "Heart Rate Monitors"
-        case 2:
+        case 1:
             return "Cycling Power Meters"
         default:
             return "Unknown section"
@@ -107,11 +103,8 @@ extension ConnectionsViewController: UITableViewDataSource {
         
         switch (section) {
         case 0:
-            // Logic for showing connected devices
-            print("Logic for showing connected devices needed")
-        case 1:
             cell.setupCell(cellViewModel: viewModel.heartRateCellViewModels[row])
-        case 2:
+        case 1:
             cell.setupCell(cellViewModel: viewModel.cyclingPowerCellViewModels[row])
         default:
             break

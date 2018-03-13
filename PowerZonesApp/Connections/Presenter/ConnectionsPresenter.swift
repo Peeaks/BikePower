@@ -12,12 +12,14 @@ class ConnectionsPresenter {
         self.viewController = viewController
     }
     
-    func refreshViewModel(heartRatePeripherals: [CBPeripheral], cyclingPowerPeripherals: [CBPeripheral]) {
+    func refreshViewModel(connectedPeripherals: [CBPeripheral], heartRatePeripherals: [CBPeripheral], cyclingPowerPeripherals: [CBPeripheral]) {
         let heartRateTransformer: (CBPeripheral) -> (ConnectionsCellViewModel) = { peripheral in
-            return ConnectionsCellViewModel(active: false, type: .HR, name: peripheral.name ?? "No name found")
+            let connected = connectedPeripherals.contains(peripheral)
+            return ConnectionsCellViewModel(active: connected, type: .HR, name: peripheral.name ?? "No name found")
         }
         let cyclingPowerTransformer: (CBPeripheral) -> (ConnectionsCellViewModel) = { peripheral in
-            return ConnectionsCellViewModel(active: false, type: .PWR, name: peripheral.name ?? "No name found")
+            let connected = connectedPeripherals.contains(peripheral)
+            return ConnectionsCellViewModel(active: connected, type: .PWR, name: peripheral.name ?? "No name found")
         }
         
         let heartRateCellViewModels = heartRatePeripherals.map(heartRateTransformer)
@@ -55,8 +57,8 @@ extension ConnectionsPresenter: ConnectionsEventHandlerProtocol {
 
 extension ConnectionsPresenter: ConnectionsPresenterProtocol {
     //Present something from the interactor
-    func presentPeripherals(heartRatePeripherals: [CBPeripheral], cyclingPowerPeripherals: [CBPeripheral]) {
-        refreshViewModel(heartRatePeripherals: heartRatePeripherals, cyclingPowerPeripherals: cyclingPowerPeripherals)
+    func presentPeripherals(connectedPeripherals: [CBPeripheral], heartRatePeripherals: [CBPeripheral], cyclingPowerPeripherals: [CBPeripheral]) {
+        refreshViewModel(connectedPeripherals: connectedPeripherals, heartRatePeripherals: heartRatePeripherals, cyclingPowerPeripherals: cyclingPowerPeripherals)
     }
 }
 
