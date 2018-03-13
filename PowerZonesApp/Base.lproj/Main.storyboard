@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -332,30 +331,41 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2W-M2-emR">
-                                                    <rect key="frame" x="25" y="24.5" width="23" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heartIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="kIr-q2-UHO">
+                                                    <rect key="frame" x="25" y="10" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="4J8-kR-CBM"/>
+                                                        <constraint firstAttribute="width" constant="50" id="vom-5W-H6E"/>
+                                                    </constraints>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tickr 651C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p6i-Lr-pwH">
-                                                    <rect key="frame" x="73" y="24.5" width="83" height="21"/>
+                                                    <rect key="frame" x="75" y="24.5" width="225" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmarkIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="zhW-Ur-GDk">
+                                                    <rect key="frame" x="300" y="9" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="4uC-BZ-ceB"/>
+                                                        <constraint firstAttribute="height" constant="50" id="QSX-9B-BkS"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="T2W-M2-emR" firstAttribute="centerY" secondItem="Q3g-Ne-vYK" secondAttribute="centerY" id="4Oy-JH-eba"/>
-                                                <constraint firstItem="T2W-M2-emR" firstAttribute="leading" secondItem="Q3g-Ne-vYK" secondAttribute="leadingMargin" constant="10" id="BNR-B5-OML"/>
+                                                <constraint firstItem="kIr-q2-UHO" firstAttribute="leading" secondItem="Q3g-Ne-vYK" secondAttribute="leading" constant="25" id="Gcp-Na-uB5"/>
                                                 <constraint firstItem="p6i-Lr-pwH" firstAttribute="centerY" secondItem="Q3g-Ne-vYK" secondAttribute="centerY" id="PeT-NF-VLe"/>
-                                                <constraint firstItem="p6i-Lr-pwH" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="T2W-M2-emR" secondAttribute="trailing" constant="8" symbolic="YES" id="Ugr-Xh-qFl"/>
-                                                <constraint firstAttribute="trailing" secondItem="p6i-Lr-pwH" secondAttribute="trailing" constant="219" id="nq2-PM-vod"/>
+                                                <constraint firstItem="zhW-Ur-GDk" firstAttribute="leading" secondItem="p6i-Lr-pwH" secondAttribute="trailing" id="ToS-Gr-pDT"/>
+                                                <constraint firstAttribute="trailing" secondItem="zhW-Ur-GDk" secondAttribute="trailing" constant="25" id="akN-Nf-o1W"/>
+                                                <constraint firstItem="p6i-Lr-pwH" firstAttribute="leading" secondItem="kIr-q2-UHO" secondAttribute="trailing" id="gOq-Ki-6U5"/>
+                                                <constraint firstItem="zhW-Ur-GDk" firstAttribute="centerY" secondItem="Q3g-Ne-vYK" secondAttribute="centerY" id="qWM-lT-8vf"/>
+                                                <constraint firstItem="kIr-q2-UHO" firstAttribute="centerY" secondItem="Q3g-Ne-vYK" secondAttribute="centerY" id="vhB-Pr-ndh"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="checkmarkImage" destination="zhW-Ur-GDk" id="V0Z-E0-7Bx"/>
                                             <outlet property="nameLabel" destination="p6i-Lr-pwH" id="eAT-x9-jZ5"/>
-                                            <outlet property="typeLabel" destination="T2W-M2-emR" id="tI2-il-Rus"/>
+                                            <outlet property="typeImage" destination="kIr-q2-UHO" id="N73-wm-oeb"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -395,5 +405,7 @@
     </scenes>
     <resources>
         <image name="bigWhiteCircle.png" width="500" height="500"/>
+        <image name="checkmarkIcon.png" width="96" height="96"/>
+        <image name="heartIcon.png" width="96" height="96"/>
     </resources>
 </document>

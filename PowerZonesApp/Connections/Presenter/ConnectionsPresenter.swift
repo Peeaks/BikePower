@@ -14,10 +14,10 @@ class ConnectionsPresenter {
     
     func refreshViewModel(heartRatePeripherals: [CBPeripheral], cyclingPowerPeripherals: [CBPeripheral]) {
         let heartRateTransformer: (CBPeripheral) -> (ConnectionsCellViewModel) = { peripheral in
-            return ConnectionsCellViewModel(type: "HR", name: peripheral.name ?? "No name found")
+            return ConnectionsCellViewModel(active: false, type: .HR, name: peripheral.name ?? "No name found")
         }
         let cyclingPowerTransformer: (CBPeripheral) -> (ConnectionsCellViewModel) = { peripheral in
-            return ConnectionsCellViewModel(type: "PWR", name: peripheral.name ?? "No name found")
+            return ConnectionsCellViewModel(active: false, type: .PWR, name: peripheral.name ?? "No name found")
         }
         
         let heartRateCellViewModels = heartRatePeripherals.map(heartRateTransformer)

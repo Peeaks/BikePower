@@ -1,6 +1,7 @@
 import Foundation
 
 struct ConnectionsCellViewModel {
-    let type: String;
+    let active: Bool
+    let type: DeviceType;
     let name: String;
 }
