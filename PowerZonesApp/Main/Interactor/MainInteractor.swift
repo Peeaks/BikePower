@@ -9,10 +9,10 @@ class MainInteractor {
     init(presenter: MainPresenterProtocol) {
         self.presenter = presenter
         
-        sharedBLEManager.heartRateChanged = presentHeartRate
-        sharedBLEManager.powerChanged = presentPower
-//        sharedMockBLEManager.heartRateChanged = presentHeartRate
-//        sharedMockBLEManager.powerChanged = presentPower
+//        sharedBLEManager.heartRateChanged = presentHeartRate
+//        sharedBLEManager.powerChanged = presentPower
+        sharedMockBLEManager.heartRateChanged = presentHeartRate
+        sharedMockBLEManager.powerChanged = presentPower
     }
 
 }
