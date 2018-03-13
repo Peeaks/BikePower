@@ -38,9 +38,9 @@ class MainPresenter {
             return 1
         } else if powerPercentOfFtp <= 76 {
             return 2
-        } else if powerPercentOfFtp <= 82 {
-            return 3
         } else if powerPercentOfFtp <= 90 {
+            return 3
+        } else if powerPercentOfFtp <= 105 {
             return 4
         } else {
             return 5
