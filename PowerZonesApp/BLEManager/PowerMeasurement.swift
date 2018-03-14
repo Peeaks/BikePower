@@ -35,24 +35,22 @@ struct PowerMeasurement {
         self.wheelSize = wheelSize
         
         // Flags
-        let flags1: UInt8 = bytes[0]
-        let flags2: UInt8 = bytes[1]
+        let flagsArray: [UInt8] = [bytes[0], bytes[1]]
+        let flags = flagsArray.data.uint16
         
-        self.pedalPowerBalancePresent = ((flags1 & 0x01) > 0)
-        self.pedalPowerBalanceReference = ((flags1 & 0x02) > 0)
-        self.accumulatedTorquePresent = ((flags1 & 0x03) > 0)
-        self.accumulatedTorqueSource = ((flags1 & 0x04) > 0)
-//        self.wheelRevolutionDataPresent = ((flags1 & 0x05) > 0)
-//        self.crankRevolutionDataPresent = ((flags1 & 0x06) > 0)
-        self.wheelRevolutionDataPresent = true
-        self.crankRevolutionDataPresent = true
-        self.extremeForceMagnitudesresent = ((flags1 & 0x07) > 0)
-        self.extremeTorqueMagnitudesPresent = ((flags1 & 0x08) > 0)
-        self.extremeAnglesPresent = ((flags2 & 0x01) > 0)
-        self.topDeadSpotAnglePresent = ((flags2 & 0x02) > 0)
-        self.bottomDeadSpotAnglePresent = ((flags2 & 0x03) > 0)
-        self.accumulatedEnergyPresent = ((flags2 & 0x04) > 0)
-        self.offsetCompensationIndicator = ((flags2 & 0x05) > 0)
+        self.pedalPowerBalancePresent = ((flags >> 0) & 1) > 0
+        self.pedalPowerBalanceReference = ((flags >> 1) & 1) > 0
+        self.accumulatedTorquePresent = ((flags >> 2) & 1) > 0
+        self.accumulatedTorqueSource = ((flags >> 3) & 1) > 0
+        self.wheelRevolutionDataPresent = ((flags >> 4) & 1) > 0
+        self.crankRevolutionDataPresent = ((flags >> 5) & 1) > 0
+        self.extremeForceMagnitudesresent = ((flags >> 6) & 1) > 0
+        self.extremeTorqueMagnitudesPresent = ((flags >> 7) & 1) > 0
+        self.extremeAnglesPresent = ((flags >> 8) & 1) > 0
+        self.topDeadSpotAnglePresent = ((flags >> 9) & 1) > 0
+        self.bottomDeadSpotAnglePresent = ((flags >> 10) & 1) > 0
+        self.accumulatedEnergyPresent = ((flags >> 11) & 1) > 0
+        self.offsetCompensationIndicator = ((flags >> 12) & 1) > 0
         
         let powerArray: [UInt8] = [bytes[2], bytes[3]]
         self.power = powerArray.data.uint16
