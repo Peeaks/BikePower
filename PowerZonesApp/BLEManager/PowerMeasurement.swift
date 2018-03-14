@@ -42,8 +42,10 @@ struct PowerMeasurement {
         self.pedalPowerBalanceReference = ((flags1 & 0x02) > 0)
         self.accumulatedTorquePresent = ((flags1 & 0x03) > 0)
         self.accumulatedTorqueSource = ((flags1 & 0x04) > 0)
-        self.wheelRevolutionDataPresent = ((flags1 & 0x05) > 0)
-        self.crankRevolutionDataPresent = ((flags1 & 0x06) > 0)
+//        self.wheelRevolutionDataPresent = ((flags1 & 0x05) > 0)
+//        self.crankRevolutionDataPresent = ((flags1 & 0x06) > 0)
+        self.wheelRevolutionDataPresent = true
+        self.crankRevolutionDataPresent = true
         self.extremeForceMagnitudesresent = ((flags1 & 0x07) > 0)
         self.extremeTorqueMagnitudesPresent = ((flags1 & 0x08) > 0)
         self.extremeAnglesPresent = ((flags2 & 0x01) > 0)
@@ -53,13 +55,8 @@ struct PowerMeasurement {
         self.offsetCompensationIndicator = ((flags2 & 0x05) > 0)
         
         let powerArray: [UInt8] = [bytes[2], bytes[3]]
-//        self.power = (UInt16(powerArray[1]) << 8) + UInt16(powerArray[0])
         self.power = powerArray.data.uint16
         logw("Power calculated to: \(self.power)")
-//        let powerBigEndianValue = powerArray.withUnsafeBufferPointer {
-//            ($0.baseAddress!.withMemoryRebound(to: UInt16.self, capacity: 1) { $0 })
-//            }.pointee
-//        self.power = UInt16(bigEndian: powerBigEndianValue)
         
         var wheel: UInt32 = 0
         var wheelTime: UInt16 = 0
@@ -69,41 +66,24 @@ struct PowerMeasurement {
         // Check if Wheel measurement data is present
         if self.wheelRevolutionDataPresent {
             logw("Wheel data is present")
-            let wheelArray: [UInt8] = [bytes[7], bytes[8], bytes[9], bytes[10]]
+            let wheelArray: [UInt8] = [bytes[4], bytes[5], bytes[6], bytes[7]]
             wheel = wheelArray.data.uint32
             logw("Wheel calculated to: \(wheel)")
-//            let wheelBigEndianValue = wheelArray.withUnsafeBufferPointer {
-//                ($0.baseAddress!.withMemoryRebound(to: UInt32.self, capacity: 1) { $0 })
-//                }.pointee
-//            wheel = UInt32(bigEndian: wheelBigEndianValue)
             
-            let wheelTimeArray: [UInt8] = [bytes[11], bytes[12]]
+            let wheelTimeArray: [UInt8] = [bytes[8], bytes[9]]
             wheelTime = wheelTimeArray.data.uint16
             logw("WheelTime calculated to: \(wheelTime)")
-//            let wheelTimeBigEndianValue = wheelTimeArray.withUnsafeBufferPointer {
-//                ($0.baseAddress!.withMemoryRebound(to: UInt16.self, capacity: 1) { $0 })
-//                }.pointee
-//            wheelTime = UInt16(bigEndian: wheelTimeBigEndianValue)
         }
         
         // Check if Crank measurement data is present
         if self.crankRevolutionDataPresent {
             logw("Crank data is present")
-            let crankArray: [UInt8] = [bytes[13], bytes[14]]
+            let crankArray: [UInt8] = [bytes[10], bytes[11]]
             crank = crankArray.data.uint16
             logw("Crank calculated to: \(crank)")
-//            let crankBigEndianValue = crankArray.withUnsafeBufferPointer {
-//                ($0.baseAddress!.withMemoryRebound(to: UInt16.self, capacity: 1) { $0 })
-//                }.pointee
-//            crank = UInt16(bigEndian: crankBigEndianValue)
             
-            let crankTimeArray: [UInt8] = [bytes[15], bytes[16]]
+            let crankTimeArray: [UInt8] = [bytes[12], bytes[13]]
             crankTime = crankTimeArray.data.uint16
-            logw("CrankTime calculated to: \(crankTime)")
-//            let crankTimeBigEndianValue = crankTimeArray.withUnsafeBufferPointer {
-//                ($0.baseAddress!.withMemoryRebound(to: UInt16.self, capacity: 1) { $0 })
-//                }.pointee
-//            crankTime = UInt16(bigEndian: crankTimeBigEndianValue)
         }
         
         self.cumulativeWheel = CFSwapInt32LittleToHost(wheel)
