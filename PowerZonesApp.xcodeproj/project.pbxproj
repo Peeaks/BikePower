@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		1DD78CC5F0AC2DAFF8CA03EB /* Pods_PowerZonesApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AEFF51B76505043F03C9085 /* Pods_PowerZonesApp.framework */; };
+		633B84AA20593CF80064F020 /* veryBigWhiteCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = 633B84A520593CF70064F020 /* veryBigWhiteCircle.png */; };
+		633B84AB20593CF80064F020 /* veryBigBlueCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = 633B84A620593CF70064F020 /* veryBigBlueCircle.png */; };
+		633B84AC20593CF80064F020 /* veryBigYellowCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = 633B84A720593CF70064F020 /* veryBigYellowCircle.png */; };
+		633B84AD20593CF80064F020 /* veryBigRedCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = 633B84A820593CF70064F020 /* veryBigRedCircle.png */; };
+		633B84AE20593CF80064F020 /* veryBigGreenCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = 633B84A920593CF70064F020 /* veryBigGreenCircle.png */; };
 		635EBDB92057ECF600DF9CB7 /* bigRedCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = 635EBDB22057EB2700DF9CB7 /* bigRedCircle.png */; };
 		635EBDBA2057F0E700DF9CB7 /* bigGreenCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = 635EBDB72057EB2800DF9CB7 /* bigGreenCircle.png */; };
 		635EBDBB2057F0EA00DF9CB7 /* bigBlueCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = 635EBDB42057EB2700DF9CB7 /* bigBlueCircle.png */; };
@@ -88,6 +93,12 @@
 /* Begin PBXFileReference section */
 		05BFD3E5A9A9F3861F10D53E /* Pods-PowerZonesApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PowerZonesApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PowerZonesApp/Pods-PowerZonesApp.debug.xcconfig"; sourceTree = "<group>"; };
 		2AEFF51B76505043F03C9085 /* Pods_PowerZonesApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PowerZonesApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		633B84902058936E0064F020 /* PowerZonesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PowerZonesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		633B84A520593CF70064F020 /* veryBigWhiteCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = veryBigWhiteCircle.png; sourceTree = "<group>"; };
+		633B84A620593CF70064F020 /* veryBigBlueCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = veryBigBlueCircle.png; sourceTree = "<group>"; };
+		633B84A720593CF70064F020 /* veryBigYellowCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = veryBigYellowCircle.png; sourceTree = "<group>"; };
+		633B84A820593CF70064F020 /* veryBigRedCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = veryBigRedCircle.png; sourceTree = "<group>"; };
+		633B84A920593CF70064F020 /* veryBigGreenCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = veryBigGreenCircle.png; sourceTree = "<group>"; };
 		635EBDB12057EB2700DF9CB7 /* powerIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = powerIcon.png; sourceTree = "<group>"; };
 		635EBDB22057EB2700DF9CB7 /* bigRedCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bigRedCircle.png; sourceTree = "<group>"; };
 		635EBDB32057EB2700DF9CB7 /* bigWhiteCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bigWhiteCircle.png; sourceTree = "<group>"; };
@@ -96,7 +107,6 @@
 		635EBDB62057EB2700DF9CB7 /* checkmarkIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkmarkIcon.png; sourceTree = "<group>"; };
 		635EBDB72057EB2800DF9CB7 /* bigGreenCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bigGreenCircle.png; sourceTree = "<group>"; };
 		635EBDB82057EB2800DF9CB7 /* heartIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heartIcon.png; sourceTree = "<group>"; };
-		63C9773B204FDA8A0096456E /* PowerZonesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = PowerZonesApp.app; path = "/Users/kristoffer/Projects/PowerZonesApp/build/Debug-iphoneos/PowerZonesApp.app"; sourceTree = "<absolute>"; };
 		63C9773E204FDA8A0096456E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63C97743204FDA8A0096456E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		63C97745204FDA8A0096456E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -181,6 +191,7 @@
 				63C9773D204FDA8A0096456E /* PowerZonesApp */,
 				B9F7854F87A1D26553DFBA7C /* Pods */,
 				51057FC14F7705477F14347D /* Frameworks */,
+				633B84902058936E0064F020 /* PowerZonesApp.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -342,6 +353,11 @@
 		63D37BDF2055AF7100D5EA41 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				633B84A620593CF70064F020 /* veryBigBlueCircle.png */,
+				633B84A920593CF70064F020 /* veryBigGreenCircle.png */,
+				633B84A820593CF70064F020 /* veryBigRedCircle.png */,
+				633B84A520593CF70064F020 /* veryBigWhiteCircle.png */,
+				633B84A720593CF70064F020 /* veryBigYellowCircle.png */,
 				635EBDB42057EB2700DF9CB7 /* bigBlueCircle.png */,
 				635EBDB72057EB2800DF9CB7 /* bigGreenCircle.png */,
 				635EBDB22057EB2700DF9CB7 /* bigRedCircle.png */,
@@ -444,7 +460,7 @@
 			);
 			name = PowerZonesApp;
 			productName = PowerZonesApp;
-			productReference = 63C9773B204FDA8A0096456E /* PowerZonesApp.app */;
+			productReference = 633B84902058936E0064F020 /* PowerZonesApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -493,12 +509,17 @@
 			files = (
 				635EBDBF2057F0FB00DF9CB7 /* bigYellowCircle.png in Resources */,
 				635EBDBB2057F0EA00DF9CB7 /* bigBlueCircle.png in Resources */,
+				633B84AC20593CF80064F020 /* veryBigYellowCircle.png in Resources */,
 				63C97749204FDA8A0096456E /* LaunchScreen.storyboard in Resources */,
+				633B84AE20593CF80064F020 /* veryBigGreenCircle.png in Resources */,
 				63C97746204FDA8A0096456E /* Assets.xcassets in Resources */,
 				635EBDBA2057F0E700DF9CB7 /* bigGreenCircle.png in Resources */,
 				635EBDBE2057F0F700DF9CB7 /* checkmarkIcon.png in Resources */,
 				635EBDBC2057F0F000DF9CB7 /* heartIcon.png in Resources */,
 				635EBDC02057F0FD00DF9CB7 /* bigWhiteCircle.png in Resources */,
+				633B84AB20593CF80064F020 /* veryBigBlueCircle.png in Resources */,
+				633B84AD20593CF80064F020 /* veryBigRedCircle.png in Resources */,
+				633B84AA20593CF80064F020 /* veryBigWhiteCircle.png in Resources */,
 				635EBDB92057ECF600DF9CB7 /* bigRedCircle.png in Resources */,
 				635EBDBD2057F0F300DF9CB7 /* powerIcon.png in Resources */,
 				63C97744204FDA8A0096456E /* Main.storyboard in Resources */,

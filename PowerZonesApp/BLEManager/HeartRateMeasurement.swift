@@ -1,5 +1,6 @@
 import Foundation
 import CoreBluetooth
+import SwiftLog
 
 struct HeartRateMeasurement {
     
@@ -23,7 +24,11 @@ struct HeartRateMeasurement {
         
         if heartRateValueFormatBit {
             // Heart Rate Value is in the 2nd and 3rd byte
-            self.heartRate = (Int(bytes[1]) << 8) | Int(bytes[2])
+//            self.heartRate = (Int(bytes[1]) << 8) | Int(bytes[2])
+//            logw("Old way: \(self.heartRate)")
+            let heartArray = [bytes[1], bytes[2]]
+            self.heartRate = Int(heartArray.data.uint16)
+//            logw("New way: \(self.heartRate)")
         } else {
             // Heart Rate Value is in the 2nd byte
             self.heartRate = Int(bytes[1])

@@ -56,17 +56,17 @@ extension MainViewController {
         
         switch viewModel.powerZone {
         case 1:
-            powerZoneImage.image = UIImage(named: "bigWhiteCircle")
+            powerZoneImage.image = UIImage(named: "veryBigWhiteCircle")
         case 2:
-            powerZoneImage.image = UIImage(named: "bigBlueCircle")
+            powerZoneImage.image = UIImage(named: "veryBigBlueCircle")
         case 3:
-            powerZoneImage.image = UIImage(named: "bigGreenCircle")
+            powerZoneImage.image = UIImage(named: "veryBigGreenCircle")
         case 4:
-            powerZoneImage.image = UIImage(named: "bigYellowCircle")
+            powerZoneImage.image = UIImage(named: "veryBigYellowCircle")
         case 5:
-            powerZoneImage.image = UIImage(named: "bigRedCircle")
+            powerZoneImage.image = UIImage(named: "veryBigRedCircle")
         default:
-            powerZoneImage.image = UIImage(named: "bigWhiteCircle")
+            powerZoneImage.image = UIImage(named: "veryBigWhiteCircle")
         }
     }
 }

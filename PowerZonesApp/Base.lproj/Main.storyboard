@@ -101,7 +101,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s0h-sa-oOR">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="220"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bigWhiteCircle.png" translatesAutoresizingMaskIntoConstraints="NO" id="3rt-hy-Okh">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="veryBigWhiteCircle.png" translatesAutoresizingMaskIntoConstraints="NO" id="3rt-hy-Okh">
                                                 <rect key="frame" x="62" y="0.0" width="250" height="250"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="250" id="J2M-dX-Y5L"/>
@@ -109,23 +109,23 @@
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Okd-DN-oV2">
-                                                <rect key="frame" x="157" y="50" width="60.5" height="150"/>
+                                                <rect key="frame" x="105" y="50" width="165.5" height="150"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCa-fV-PNf">
-                                                        <rect key="frame" x="0.0" y="0.0" width="60.5" height="31.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="165.5" height="31"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                                         <color key="textColor" red="0.33333333329999998" green="0.43529411759999997" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DG3-62-m0T">
-                                                        <rect key="frame" x="0.0" y="31.5" width="60.5" height="87.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="140" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DG3-62-m0T">
+                                                        <rect key="frame" x="0.0" y="31" width="165.5" height="88"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="100"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" FTP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YLR-Qg-kZ4">
-                                                        <rect key="frame" x="0.0" y="119" width="60.5" height="31"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <rect key="frame" x="0.0" y="119" width="165.5" height="31"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                                         <color key="textColor" red="0.33333333329999998" green="0.43529411759999997" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -404,8 +404,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bigWhiteCircle.png" width="500" height="500"/>
         <image name="checkmarkIcon.png" width="96" height="96"/>
         <image name="heartIcon.png" width="96" height="96"/>
+        <image name="veryBigWhiteCircle.png" width="2000" height="2000"/>
     </resources>
 </document>
