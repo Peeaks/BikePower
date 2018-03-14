@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1DD78CC5F0AC2DAFF8CA03EB /* Pods_PowerZonesApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AEFF51B76505043F03C9085 /* Pods_PowerZonesApp.framework */; };
 		635EBDB92057ECF600DF9CB7 /* bigRedCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = 635EBDB22057EB2700DF9CB7 /* bigRedCircle.png */; };
 		635EBDBA2057F0E700DF9CB7 /* bigGreenCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = 635EBDB72057EB2800DF9CB7 /* bigGreenCircle.png */; };
 		635EBDBB2057F0EA00DF9CB7 /* bigBlueCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = 635EBDB42057EB2700DF9CB7 /* bigBlueCircle.png */; };
@@ -56,7 +57,6 @@
 		63D37BE720567FE200D5EA41 /* PowerMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D37BE620567FE200D5EA41 /* PowerMeasurement.swift */; };
 		63D37BE920568F3C00D5EA41 /* PowerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D37BE820568F3C00D5EA41 /* PowerData.swift */; };
 		63D37BEB205699F600D5EA41 /* HeartRateMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D37BEA205699F600D5EA41 /* HeartRateMeasurement.swift */; };
-		63F867D4204FDE9E00EBC7B8 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63F867D3204FDE9E00EBC7B8 /* CoreBluetooth.framework */; };
 		63F8682C205004F100EBC7B8 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F8681B205004F100EBC7B8 /* MainPresenter.swift */; };
 		63F8682D205004F100EBC7B8 /* MainEventHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F8681C205004F100EBC7B8 /* MainEventHandlerProtocol.swift */; };
 		63F8682E205004F100EBC7B8 /* MainRouteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F8681D205004F100EBC7B8 /* MainRouteModel.swift */; };
@@ -86,6 +86,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		05BFD3E5A9A9F3861F10D53E /* Pods-PowerZonesApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PowerZonesApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PowerZonesApp/Pods-PowerZonesApp.debug.xcconfig"; sourceTree = "<group>"; };
+		2AEFF51B76505043F03C9085 /* Pods_PowerZonesApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PowerZonesApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		635EBDB12057EB2700DF9CB7 /* powerIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = powerIcon.png; sourceTree = "<group>"; };
 		635EBDB22057EB2700DF9CB7 /* bigRedCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bigRedCircle.png; sourceTree = "<group>"; };
 		635EBDB32057EB2700DF9CB7 /* bigWhiteCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bigWhiteCircle.png; sourceTree = "<group>"; };
@@ -94,7 +96,7 @@
 		635EBDB62057EB2700DF9CB7 /* checkmarkIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkmarkIcon.png; sourceTree = "<group>"; };
 		635EBDB72057EB2800DF9CB7 /* bigGreenCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bigGreenCircle.png; sourceTree = "<group>"; };
 		635EBDB82057EB2800DF9CB7 /* heartIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heartIcon.png; sourceTree = "<group>"; };
-		63C9773B204FDA8A0096456E /* PowerZonesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PowerZonesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		63C9773B204FDA8A0096456E /* PowerZonesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = PowerZonesApp.app; path = "/Users/kristoffer/Projects/PowerZonesApp/build/Debug-iphoneos/PowerZonesApp.app"; sourceTree = "<absolute>"; };
 		63C9773E204FDA8A0096456E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63C97743204FDA8A0096456E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		63C97745204FDA8A0096456E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -137,7 +139,6 @@
 		63D37BE620567FE200D5EA41 /* PowerMeasurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerMeasurement.swift; sourceTree = "<group>"; };
 		63D37BE820568F3C00D5EA41 /* PowerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerData.swift; sourceTree = "<group>"; };
 		63D37BEA205699F600D5EA41 /* HeartRateMeasurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateMeasurement.swift; sourceTree = "<group>"; };
-		63F867D3204FDE9E00EBC7B8 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		63F8681B205004F100EBC7B8 /* MainPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		63F8681C205004F100EBC7B8 /* MainEventHandlerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainEventHandlerProtocol.swift; sourceTree = "<group>"; };
 		63F8681D205004F100EBC7B8 /* MainRouteModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainRouteModel.swift; sourceTree = "<group>"; };
@@ -151,6 +152,7 @@
 		63F86828205004F100EBC7B8 /* MainEntityGateway.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainEntityGateway.swift; sourceTree = "<group>"; };
 		63F8682A205004F100EBC7B8 /* MainRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		63F8682B205004F100EBC7B8 /* MainRouterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainRouterProtocol.swift; sourceTree = "<group>"; };
+		9A393223E9C59F4BE96D0C6A /* Pods-PowerZonesApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PowerZonesApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-PowerZonesApp/Pods-PowerZonesApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,28 +160,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63F867D4204FDE9E00EBC7B8 /* CoreBluetooth.framework in Frameworks */,
+				1DD78CC5F0AC2DAFF8CA03EB /* Pods_PowerZonesApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		51057FC14F7705477F14347D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2AEFF51B76505043F03C9085 /* Pods_PowerZonesApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		63C97732204FDA8A0096456E = {
 			isa = PBXGroup;
 			children = (
 				63C9773D204FDA8A0096456E /* PowerZonesApp */,
-				63C9773C204FDA8A0096456E /* Products */,
-				9E744F41597983D35AEF9D98 /* Frameworks */,
+				B9F7854F87A1D26553DFBA7C /* Pods */,
+				51057FC14F7705477F14347D /* Frameworks */,
 			);
-			sourceTree = "<group>";
-		};
-		63C9773C204FDA8A0096456E /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				63C9773B204FDA8A0096456E /* PowerZonesApp.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		63C9773D204FDA8A0096456E /* PowerZonesApp */ = {
@@ -412,12 +414,13 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
-		9E744F41597983D35AEF9D98 /* Frameworks */ = {
+		B9F7854F87A1D26553DFBA7C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				63F867D3204FDE9E00EBC7B8 /* CoreBluetooth.framework */,
+				05BFD3E5A9A9F3861F10D53E /* Pods-PowerZonesApp.debug.xcconfig */,
+				9A393223E9C59F4BE96D0C6A /* Pods-PowerZonesApp.release.xcconfig */,
 			);
-			name = Frameworks;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -427,10 +430,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63C9774D204FDA8A0096456E /* Build configuration list for PBXNativeTarget "PowerZonesApp" */;
 			buildPhases = (
+				A17AA4D07D5CF068BE072785 /* [CP] Check Pods Manifest.lock */,
 				63C97737204FDA8A0096456E /* Sources */,
 				63C97738204FDA8A0096456E /* Frameworks */,
 				63C97739204FDA8A0096456E /* Resources */,
 				63F86818204FE25A00EBC7B8 /* Embed Frameworks */,
+				AAD839C24376AB548D520473 /* [CP] Embed Pods Frameworks */,
+				7A3982126E2736D4549FB9E7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -471,7 +477,7 @@
 				Base,
 			);
 			mainGroup = 63C97732204FDA8A0096456E;
-			productRefGroup = 63C9773C204FDA8A0096456E /* Products */;
+			productRefGroup = 63C97732204FDA8A0096456E;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -500,6 +506,60 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7A3982126E2736D4549FB9E7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PowerZonesApp/Pods-PowerZonesApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A17AA4D07D5CF068BE072785 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PowerZonesApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AAD839C24376AB548D520473 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PowerZonesApp/Pods-PowerZonesApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftLog/SwiftLog.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftLog.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PowerZonesApp/Pods-PowerZonesApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		63C97737204FDA8A0096456E /* Sources */ = {
@@ -691,6 +751,7 @@
 		};
 		63C9774E204FDA8A0096456E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05BFD3E5A9A9F3861F10D53E /* Pods-PowerZonesApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -706,6 +767,7 @@
 		};
 		63C9774F204FDA8A0096456E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A393223E9C59F4BE96D0C6A /* Pods-PowerZonesApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -20,13 +20,11 @@ class ConnectionsInteractor {
     }
     
     func heartRatePeripheralDiscovered(peripheral: CBPeripheral) {
-        print("Found peripheral: \(peripheral.name ?? "No name found")")
         heartRatePeripherals.append(peripheral)
         presentPeripherals()
     }
     
     func cyclingPowerPeripheralDiscovered(peripheral: CBPeripheral) {
-        print("Found peripheral: \(peripheral.name ?? "No name found")")
         cyclingPowerPeripherals.append(peripheral)
         presentPeripherals()
     }
@@ -55,13 +53,11 @@ extension ConnectionsInteractor: ConnectionsInteractorProtocol {
     
     //In
     func didLoad() {
-        print("Starting BLE scan")
         presentPeripherals()
         sharedBLEManager.startScanning()
     }
     
     func didDisappear() {
-        print("Stopping BLE scan")
         sharedBLEManager.stopScanning()
     }
     
